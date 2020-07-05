@@ -1,0 +1,41 @@
+server:
+  port: 8443
+  ssl:
+#    protocol: TLS
+    key-store: classpath:imocker.keystore
+    key-store-password: imocker
+    key-store-type: JKS
+
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: test
+    publisher-confirms: true
+    publisher-returns: true
+    connection-timeout: 5000
+    requested-heartbeat: 30
+    template:
+      mandatory: true
+      retry:
+        enabled: true
+    listener:
+      simple:
+        auto-startup: true
+        acknowledge-mode: manual
+#        prefetch: 1
+        concurrency: 1
+#        max-concurrency: 10
+        default-requeue-rejected: true
+        retry:
+          enabled: true
+          multiplier: 2.0
+          max-attempts: 3
+
+
+logging:
+  level:
+    root: info
+

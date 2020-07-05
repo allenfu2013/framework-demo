@@ -1,0 +1,5 @@
+server:
+  port: 8084
+nacos:
+  config:
+    server-addr: 192.168.32.200:8848

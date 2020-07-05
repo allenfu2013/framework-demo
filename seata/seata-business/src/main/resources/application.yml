@@ -1,0 +1,16 @@
+server:
+  port: 7070
+
+dubbo:
+  application:
+    name:  seata-business
+  registry:
+    address: localhost:2181
+    protocol: zookeeper
+    check: true
+  protocol:
+    name: dubbo
+    port: 10000
+  consumer:
+    check:  false
+    timeout: 3000

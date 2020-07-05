@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.coding.seata.storage.mapper.StorageMapper">
+
+    <sql id="all_columns">
+        id,
+        commodity_code,
+        count
+    </sql>
+
+    <select id="getById" resultType="me.coding.seata.storage.entity.Storage">
+        select
+        <include refid="all_columns"/>
+        from storage_tbl
+        where id = #{id}
+    </select>
+
+</mapper>

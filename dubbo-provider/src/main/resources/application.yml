@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+dubbo:
+  application:
+    name: dubbo-provider
+  registry:
+    address: localhost:2181
+    protocol: zookeeper
+    check: true
+  protocol:
+    name: dubbo
+    port: 30003
+
+#nacos:
+#  server-address: 192.168.32.200:8848
+#  namespace: 070b207c-1344-4c1e-9278-e30a37812cc7

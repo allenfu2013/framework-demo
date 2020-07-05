@@ -1,0 +1,18 @@
+package me.coding.drools;
+
+rule "Is of valid age"
+when
+    $a : Applicant(age>18)
+then
+    $a.setValid(true);
+    System.out.println("age > 18");
+    drools.halt();
+end
+
+rule "black list"
+when
+    $a : Applicant(name == "zhoubapi")
+then
+    $a.setValid(false);
+    System.out.println("black list hit");
+end

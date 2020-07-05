@@ -1,0 +1,10 @@
+server:
+  port: 8000
+
+logging:
+  level:
+    root: info
+
+nacos:
+  server-address: 192.168.32.200:8848
+  namespace: afdad1cc-ebd1-45fc-b496-0e06f56a0a84

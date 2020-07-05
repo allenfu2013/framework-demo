@@ -1,0 +1,23 @@
+server:
+  port: 8083
+
+dubbo:
+  application:
+    name:  dubbo-consumer
+  registry:
+    address: localhost:2181
+    protocol: zookeeper
+    check: true
+  protocol:
+    name: dubbo
+    port: 30002
+  consumer:
+    check:  false
+    timeout: 3000
+logging:
+  level:
+    root: info
+
+#nacos:
+#  server-address: 192.168.32.200:8848
+#  namespace: 070b207c-1344-4c1e-9278-e30a37812cc7
